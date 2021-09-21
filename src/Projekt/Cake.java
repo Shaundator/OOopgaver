@@ -4,8 +4,10 @@ import java.text.DecimalFormat;
 import java.util.Arrays;
 
 public class Cake {
-    String[] ingredientsName = {"Eggs", "Sugar", "Cacao", "Flour", "Baking Powder", "Vanilla", "Milk", "Oil Margarine"};
-    double[] ingredientsAmount = {5,7.1,1.8,6.5,0.38,0.35,4.29,0.2};
+    String[] ingredientsName1 = {"Eggs", "Sugar", "Cacao", "Flour", "Baking Powder", "Vanilla", "Milk", "Oil Margarine"};
+    double[] ingredientsAmount1 = {5,7.1,1.8,6.5,0.38,0.35,4.29,0.2};
+    String[] ingredientsName;
+    double[] ingredientsAmount;
     int totalPeople;
     double totalWeight;
     double totalEnergy = 75.63;
@@ -16,6 +18,32 @@ public class Cake {
         setTotalWeight();
         setTotalEnergy();
         setIngredientsGram();
+    }
+
+    public Cake(int totalPeople,int totalIngredients){
+        this.totalPeople = totalPeople;
+        ingredientsName = new String[totalIngredients];
+        ingredientsAmount = new double[totalIngredients];
+        inputIngredientsName();
+        inputIngredientsAmount();
+        setTotalWeight();
+        setTotalEnergy();
+        setIngredientsGram();
+
+    }
+
+    public void inputIngredientsAmount(){
+        int i;
+        for(i = 0; i < ingredientsAmount.length; i++){
+            ingredientsAmount[i] = ingredientsAmount1[i];
+        }
+    }
+
+    public void inputIngredientsName(){
+        int i;
+        for(i = 0; i < ingredientsName.length; i++){
+            ingredientsName[i] = ingredientsName1[i];
+        }
     }
 
     public double getTotalWeight(){
@@ -45,7 +73,6 @@ public class Cake {
     public void printIngredientsList(){
         int i;
         String distance = "               ";
-        String distance2 = "      ";
         for(i = 0; i < ingredientsAmount.length; i++){
             System.out.println(ingredientsName[i] + ": " + distance.substring(0,distance.length() - ingredientsName[i].length()) +
                     grams.format(ingredientsAmount[i]) +  " Gram");

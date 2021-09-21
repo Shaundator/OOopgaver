@@ -10,7 +10,7 @@ public class KageTester {
 
         System.out.println("Velkommen til kage opskrifteren2000\nIndtast det ønskede antal personerne kagen skal laves til:");
         int userAmount = sc.nextInt();
-        Cake cake = new Cake(userAmount);
+        Cake cake = new Cake(userAmount, 2);
 
         int userChoice;
         boolean cakeMenu = true;
