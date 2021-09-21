@@ -1,7 +1,6 @@
 package Projekt;
 
 import java.text.DecimalFormat;
-import java.util.Arrays;
 
 public class Cake {
     String[] ingredientsName1 = {"Eggs", "Sugar", "Cacao", "Flour", "Baking Powder", "Vanilla", "Milk", "Oil Margarine"};
@@ -12,14 +11,7 @@ public class Cake {
     double totalWeight;
     double totalEnergy = 75.63;
     DecimalFormat grams = new DecimalFormat("0.00");
-
-    public Cake(int totalPeople){
-        this.totalPeople = totalPeople;
-        setTotalWeight();
-        setTotalEnergy();
-        setIngredientsGram();
-    }
-
+    public Cake(){}
     public Cake(int totalPeople,int totalIngredients){
         this.totalPeople = totalPeople;
         ingredientsName = new String[totalIngredients];
@@ -29,7 +21,6 @@ public class Cake {
         setTotalWeight();
         setTotalEnergy();
         setIngredientsGram();
-
     }
 
     public void inputIngredientsAmount(){
@@ -38,15 +29,13 @@ public class Cake {
             ingredientsAmount[i] = ingredientsAmount1[i];
         }
     }
-
     public void inputIngredientsName(){
         int i;
         for(i = 0; i < ingredientsName.length; i++){
             ingredientsName[i] = ingredientsName1[i];
         }
     }
-
-    public double getTotalWeight(){
+    public double getTotalWeight() {
         return totalWeight;
     }
     public void setTotalWeight(){
@@ -83,5 +72,7 @@ public class Cake {
     public String toString(){
         return "Total weight: " + grams.format(totalWeight) +
                 "\nTotal Energy: " + grams.format(totalEnergy);
+
     }
 }
+
