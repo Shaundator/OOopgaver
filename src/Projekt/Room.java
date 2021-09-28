@@ -36,6 +36,8 @@ public class Room {
                 "\nLyset i køkkenet er " + kitchenLamp +
                 "\nLyset i stuen er " + livingRoomLamp);
 
+        System.out.println("Der er trykket på kitchen knappen " + kitchenLamp.getCount() + "gange");
+
 
 }
 
